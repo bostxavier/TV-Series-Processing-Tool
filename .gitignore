@@ -105,3 +105,8 @@ venv.bak/
 
 *~
 projects/
+moc_*
+*.o
+Makefile
+'TV Series Processing Tool'
+.qmake.stash
