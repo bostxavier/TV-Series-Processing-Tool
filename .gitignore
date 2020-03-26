@@ -107,4 +107,6 @@ venv.bak/
 build/
 bin/
 projects/
+dependencies/
 Makefile
+.qmake.stash
