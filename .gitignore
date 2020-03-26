@@ -104,9 +104,7 @@ venv.bak/
 .mypy_cache/
 
 *~
+build/
+bin/
 projects/
-moc_*
-*.o
 Makefile
-'TV Series Processing Tool'
-.qmake.stash
