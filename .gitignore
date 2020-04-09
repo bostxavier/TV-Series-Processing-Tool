@@ -106,7 +106,9 @@ venv.bak/
 *~
 build/
 bin/
-projects/
+projects/bb.json
+projects/got.json
+projects/hoc.json
 dependencies/
 Makefile
 .qmake.stash

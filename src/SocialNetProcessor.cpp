@@ -1050,6 +1050,9 @@ QList<QVector3D> SocialNetProcessor::getLayoutCoord(int nVertices, int nIter, qr
   qreal x, y, z;
 
   // parameters of Fruchterman/Reingold layout
+  qreal volume(qPow(nVertices, 3));
+  qreal coolexp(1.5); 
+  qreal repulserad(volume * nVertices);
   igraph_vector_t weights;
   igraph_vector_init(&weights, m_edges.size());
   EANV(&m_graph, "weight", &weights);
@@ -1068,16 +1071,17 @@ QList<QVector3D> SocialNetProcessor::getLayoutCoord(int nVertices, int nIter, qr
   if (twoDim) {
     igraph_layout_fruchterman_reingold(&m_graph,
 				       &m_coord,
-				       use_seed,
 				       nIter,
 				       maxdelta,
-				       IGRAPH_LAYOUT_AUTOGRID,
+				       volume,
+				       coolexp,
+				       repulserad,
+				       use_seed,
 				       &weights,
 				       nullptr,
 				       nullptr,
 				       nullptr,
 				       nullptr);
-				       
 
     // normalizing coordinates
     qreal max(0.0);
@@ -1105,9 +1109,12 @@ QList<QVector3D> SocialNetProcessor::getLayoutCoord(int nVertices, int nIter, qr
   else {
     igraph_layout_fruchterman_reingold_3d(&m_graph,
 					  &m_coord,
-					  use_seed,
 					  nIter,
 					  maxdelta,
+					  volume,
+					  coolexp,
+					  repulserad,
+					  use_seed,
 					  &weights,
 					  nullptr,
 					  nullptr,
@@ -1115,7 +1122,7 @@ QList<QVector3D> SocialNetProcessor::getLayoutCoord(int nVertices, int nIter, qr
 					  nullptr,
 					  nullptr,
 					  nullptr);
-    
+
     // normalizing coordinates
     qreal max(0.0);
     for (int i(0); i < nVertices; i++) {

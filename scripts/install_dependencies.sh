@@ -27,7 +27,7 @@ sudo ./dependencies/cplex/cplex_studio1251.linux-x86-64.bin
 
 # igraph
 sudo apt-get install libxml2-dev
-cd dependencies/igraph/igraph-0.8.1/
+cd dependencies/igraph/igraph-0.7.1/
 ./configure
 make
 make check
