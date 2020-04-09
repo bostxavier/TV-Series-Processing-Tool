@@ -7,7 +7,7 @@ As shown on the folllowing screenshot, the software includes a basic video playi
 <br />
 <br />
 <p align="center">
-<img src="./pictures/screenshot.png" data-canonical-src="TV Series Processing Tool" width="837" height="347" />
+<img src="./pictures/screenshot.png" data-canonical-src="TV Series Processing Tool">
 </p>
 <br />
 <br />
