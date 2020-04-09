@@ -22,14 +22,16 @@ sudo apt-get install libarmadillo-dev
 sudo apt-get install libopencv-dev
 
 # cplex
-chmod +x dependencies/cplex/cplex_studio1251.linux-x86-64.bin
-sudo ./dependencies/cplex/cplex_studio1251.linux-x86-64.bin
+# chmod +x dependencies/cplex/cplex_studio1251.linux-x86-64.bin
+# sudo ./dependencies/cplex/cplex_studio1251.linux-x86-64.bin
 
 # igraph
 sudo apt-get install libxml2-dev
-cd dependencies/igraph/igraph-0.7.1/
+cd dependencies/igraph
+tar xzvf igraph-0.7.1.tar.gz 
+cd igraph-0.7.1
 ./configure
 make
 make check
 sudo make install
-cd -
+cd ../../

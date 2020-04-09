@@ -109,6 +109,7 @@ bin/
 projects/bb.json
 projects/got.json
 projects/hoc.json
-dependencies/
+dependencies/cplex/*
+dependencies/igraph/igraph-0.7.1
 Makefile
 .qmake.stash
